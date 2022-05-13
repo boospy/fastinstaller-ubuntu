@@ -91,7 +91,7 @@ apt install librecad synaptic mpv tree git audacity -y
 apt install gimp gimp-help-de -y
 
 # optional - komplette Kommunikationssuite Kontact, inkl. alle Plugins und Erweiterungen
-apt install kdepim -y
+# apt install kdepim -y
 
 # optional Advanced Packages
 apt install choqok lm-sensors nvme-cli -y
