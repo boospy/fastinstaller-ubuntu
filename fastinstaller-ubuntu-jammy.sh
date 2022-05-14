@@ -59,7 +59,7 @@ apt autoremove --purge -y
 apt install onlyoffice-desktopeditors -y
 
 # Extra packages
-pt install librecad synaptic mpv tree git audacity gparted -y
+apt install librecad synaptic mpv tree git audacity gparted -y
 
 # Profi Fotoverwaltung
 # apt install digikam kipi-plugins -y
