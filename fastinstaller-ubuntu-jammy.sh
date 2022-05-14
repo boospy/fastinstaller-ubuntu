@@ -56,10 +56,10 @@ apt autoremove --purge -y
 # ------------------------------------------------------
 
 # Office Alternative, kompatibel zum Microsoftformat
-# apt install onlyoffice-desktopeditors -y
+apt install onlyoffice-desktopeditors -y
 
 # Extra packages
-# apt install librecad synaptic mpv tree git audacity gparted -y
+pt install librecad synaptic mpv tree git audacity gparted -y
 
 # Profi Fotoverwaltung
 # apt install digikam kipi-plugins -y
