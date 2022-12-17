@@ -44,11 +44,11 @@ apt install ./strawberry_1.0.4-impish_amd64.deb ./hamsket_0.6.3_amd64.deb -y
 
 # Standard packages
 
-apt install htop k3b k3b-extrathemes kdf dolphin-nextcloud nfs-common aspell-de hunspell-de-at mpv ca-certificates-iteas-enterprise gnupg-agent libreoffice-kf5 libreoffice-calc libreoffice-draw libreoffice-impress libreoffice-l10n-de libreoffice-plasma libreoffice-writer libreoffice-templates libreoffice-qt5 kleopatra gnome-icon-theme yakuake showfoto kipi-plugins kde-config-cron dolphin-plugins filelight kcolorchooser soundkonverter kcalc partitionmanager kronometer kfind unp plasma-theme-oxygen kubuntu-restricted-extras katomic avahi-discover simplescreenrecorder keepassxc avahi-utils tellico language-pack-gnome-de finger konversation filezilla nmapsi4 usb-creator-kde manpages-de master-pdf-editor-5 draw.io cifs-utils samba speedtest-cli lm-sensors smartmontools kdenetwork-filesharing kdenlive kipi-plugins digikam -y
+apt install htop k3b k3b-extrathemes kdf dolphin-nextcloud nfs-common aspell-de hunspell-de-at mpv ca-certificates-iteas-enterprise gnupg-agent libreoffice-kf5 libreoffice-calc libreoffice-draw libreoffice-impress libreoffice-l10n-de libreoffice-plasma libreoffice-writer libreoffice-templates libreoffice-qt5 kleopatra gnome-icon-theme yakuake showfoto kipi-plugins kde-config-cron dolphin-plugins filelight kcolorchooser soundkonverter kcalc partitionmanager kronometer kfind unp plasma-theme-oxygen kubuntu-restricted-extras katomic avahi-discover simplescreenrecorder keepassxc avahi-utils tellico language-pack-gnome-de finger konversation filezilla nmapsi4 usb-creator-kde manpages-de master-pdf-editor-5 draw.io cifs-utils samba speedtest-cli lm-sensors smartmontools kdenetwork-filesharing kdenlive kipi-plugins digikam plasma-workspace-wayland -y
 
 
 
-apt remove rhythmbox apport -y
+apt remove rhythmbox apport timidity -y
 snap remove firefox
 apt autoremove --purge -y
 # rm /etc/apt/apt.conf.d/01proxy
