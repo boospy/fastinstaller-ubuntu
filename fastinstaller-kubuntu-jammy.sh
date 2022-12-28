@@ -74,6 +74,8 @@ echo    "fs.file-max = 9223372036854775807" > /etc/sysctl.d/10-OSIT.conf
 echo "fs.inotify.max_user_instances = 1024"  >> /etc/sysctl.d/10-OSIT.conf
 echo "fs.inotify.max_user_watches = 5242880"  >> /etc/sysctl.d/10-OSIT.conf
 
+# zshfix für Snaps
+echo "emulate sh -c 'source /etc/profile'" >> /etc/zsh/zprofile
 
 
 # ------------------------------------------------------
