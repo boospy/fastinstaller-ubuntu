@@ -1,4 +1,6 @@
 #!/bin/bash
+# Geschrieben für Ubuntu 20.04 Focal
+
 echo 'Acquire::http { Proxy "http://apt-cacher.osit.cc:3142"; };' | tee /etc/apt/apt.conf.d/01proxy
 apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 23CAE45582EB0928
 echo "deb http://apt.iteas.at/iteas focal main" > /etc/apt/sources.list.d/iteas.list
