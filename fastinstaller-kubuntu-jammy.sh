@@ -82,10 +82,12 @@ echo "emulate sh -c 'source /etc/profile'" >> /etc/zsh/zprofile
 #apt install openshot-qt mkvtoolnix-gui makemkv-bin kdenlive -y
 
 # Office Alternative, kompatibel zum Microsoftformat
+# Office alternative, compatible with Microsoft format
 apt install onlyoffice-desktopeditors -y
 apt remove libreoffice* --purge -y
 
 # Libreoffice wenn Onlyoffice nicht gewünscht wird
+# Libreoffice if Onlyoffice is not desired
 #apt install libreoffice-kf5 libreoffice-calc libreoffice-draw libreoffice-impress libreoffice-l10n-de libreoffice-plasma libreoffice-writer libreoffice-templates libreoffice-qt5 -y
 
 # Extra packages
@@ -93,12 +95,15 @@ apt remove libreoffice* --purge -y
 
 
 # Profi Fotobearbeitung
+# Professional photo editing
 #apt install gimp gimp-help-de darktable -y
 
 # optional - komplette Kommunikationssuite Kontact, inkl. alle Plugins und Erweiterungen
+# optional - complete communication suite Kontact, incl. all plugins and extensions
 #apt install kdepim -y
 
-# Kleine Spiele von kdepim
+# Kleine Spiele von KDE
+# Small games from KDE
 #apt install kdegames -y
 
 # optional Virtualbox LTS Version
