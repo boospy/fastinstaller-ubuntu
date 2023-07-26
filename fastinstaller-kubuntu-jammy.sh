@@ -8,10 +8,11 @@
 
 
 # Apt Proxy bearbeiten oder einkommentieren
-# echo 'Acquire::http { Proxy "http://apt-cacher.osit.cc:3142"; };' | tee /etc/apt/apt.conf.d/01proxy
+# Edit or comment Apt Proxy
+#echo 'Acquire::http { Proxy "http://apt-cacher.osit.cc:3142"; };' | tee /etc/apt/apt.conf.d/01proxy
 
 gpg -k && gpg --no-default-keyring --keyring /usr/share/keyrings/iteas-keyring.gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 23CAE45582EB0928
-echo "deb [arch=amd64 signed-by=/usr/share/keyrings/iteas-keyring.gpg] https://apt.iteas.at/iteas jammy main" > /etc/apt/sources.list.d/iteas.list
+echo "deb [arch=amd64 signed-by=/usr/share/keyrings/iteas-keyring.gpg] http://apt.iteas.at/iteas jammy main" > /etc/apt/sources.list.d/iteas.list
 apt update
 apt dist-upgrade -y
 apt install ca-certificates-iteas-enterprise -y
@@ -19,12 +20,13 @@ apt install ca-certificates-iteas-enterprise -y
 cd /tmp
 
 # Google Chrome oder Brave, wähle:
+# Google Chrome or Brave, choose:
 
 # Google Chrome:
-# wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-# apt install ./google-chrome-stable_current_amd64.deb
+#wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+#apt install ./google-chrome-stable_current_amd64.deb
 
-# Brave Secure Browser (Installation nur ohne Apt-Proxy möglich)
+# Brave Secure Browser
 apt install curl -y
 curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
 echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main"| tee /etc/apt/sources.list.d/brave-browser-release.list
@@ -32,26 +34,14 @@ apt update
 apt install brave-browser -y
 
 
-ubuntu-drivers autoinstall
-wget https://download.teamviewer.com/download/linux/teamviewer_amd64.deb
-apt install ./teamviewer_amd64.deb  -y
 
-# extra manual package install because new compressionformat
-# https://www.mail-archive.com/debian-bugs-dist@lists.debian.org/msg1852790.html
-wget https://github.com/TheGoddessInari/hamsket/releases/download/0.6.3/hamsket_0.6.3_amd64.deb
-wget https://files.strawberrymusicplayer.org/strawberry_1.0.4-impish_amd64.deb
-apt install ./strawberry_1.0.4-impish_amd64.deb ./hamsket_0.6.3_amd64.deb -y
+ubuntu-drivers autoinstall
 
 # Standard packages
-
-apt install htop k3b k3b-extrathemes kdf dolphin-nextcloud nfs-common aspell-de hunspell-de-at mpv ca-certificates-iteas-enterprise gnupg-agent libreoffice-kf5 libreoffice-calc libreoffice-draw libreoffice-impress libreoffice-l10n-de libreoffice-plasma libreoffice-writer libreoffice-templates libreoffice-qt5 kleopatra gnome-icon-theme yakuake showfoto kipi-plugins kde-config-cron dolphin-plugins filelight kcolorchooser soundkonverter kcalc partitionmanager kronometer kfind unp plasma-theme-oxygen kubuntu-restricted-extras katomic avahi-discover simplescreenrecorder keepassxc avahi-utils tellico language-pack-gnome-de finger konversation filezilla nmapsi4 usb-creator-kde manpages-de master-pdf-editor-5 draw.io cifs-utils samba speedtest-cli lm-sensors smartmontools kdenetwork-filesharing kdenlive kipi-plugins digikam plasma-workspace-wayland -y
-
+apt install strawberry htop k3b k3b-extrathemes kdf dolphin-nextcloud nfs-common aspell-de hunspell-de-at mpv gnupg-agent kleopatra gnome-icon-theme showfoto kipi-plugins kde-config-cron dolphin-plugins filelight kcolorchooser soundkonverter kcalc partitionmanager kronometer kfind unp kubuntu-restricted-extras katomic avahi-discover simplescreenrecorder avahi-utils tellico language-pack-gnome-de finger konversation usb-creator-kde manpages-de master-pdf-editor-5 draw.io cifs-utils samba speedtest-cli lm-sensors nvme-cli smartmontools kdenetwork-filesharing kipi-plugins digikam plasma-workspace-wayland rustdesk bitwarden -y
 
 
 apt remove rhythmbox apport timidity -y
-snap remove firefox
-apt autoremove --purge -y
-# rm /etc/apt/apt.conf.d/01proxy
 
 # ZSH-Shell
 apt update
@@ -70,37 +60,49 @@ rm /tmp/nano.tar -f
 
 
 # Anpassen der viel zu niedrigen Werte in Sysctl
+# Adjusting the much too low values in Sysctl
 echo    "fs.file-max = 9223372036854775807" > /etc/sysctl.d/10-OSIT.conf
 echo "fs.inotify.max_user_instances = 1024"  >> /etc/sysctl.d/10-OSIT.conf
 echo "fs.inotify.max_user_watches = 5242880"  >> /etc/sysctl.d/10-OSIT.conf
 
-# zshfix für Snaps
+# zshfix for Snaps
 echo "emulate sh -c 'source /etc/profile'" >> /etc/zsh/zprofile
 
 
 # ------------------------------------------------------
 # Ab hier bitte Dinge einkommentieren die du benötigst:
+# From here please comment things you need:
 # ------------------------------------------------------
+
+
+# optional Multimediapackages
+#apt-add-repository ppa:heyarje/makemkv-beta -n -y
+#echo "deb http://ppa.launchpadcontent.net/heyarje/makemkv-beta/ubuntu/ jammy main" >  /etc/apt/sources.list.d/heyarje-ubuntu-makemkv-beta-jammy.list
+#apt update
+#apt install openshot-qt mkvtoolnix-gui makemkv-bin kdenlive -y
 
 # Office Alternative, kompatibel zum Microsoftformat
 apt install onlyoffice-desktopeditors -y
+apt remove libreoffice* --purge -y
+
+# Libreoffice wenn Onlyoffice nicht gewünscht wird
+#apt install libreoffice-kf5 libreoffice-calc libreoffice-draw libreoffice-impress libreoffice-l10n-de libreoffice-plasma libreoffice-writer libreoffice-templates libreoffice-qt5 -y
 
 # Extra packages
-apt install librecad synaptic mpv tree git audacity -y
+#apt install librecad synaptic tree git audacity -y
 
 
 # Profi Fotobearbeitung
-apt install gimp gimp-help-de -y
+#apt install gimp gimp-help-de darktable -y
 
 # optional - komplette Kommunikationssuite Kontact, inkl. alle Plugins und Erweiterungen
-# apt install kdepim -y
-
-# optional Advanced Packages
-apt install choqok lm-sensors nvme-cli -y
+#apt install kdepim -y
 
 # Kleine Spiele von kdepim
-apt install kdegames -y
+#apt install kdegames -y
 
 # optional Virtualbox LTS Version
-# apt install virtualbox virtualbox-ext-pack virtualbox-guest-additions-iso -y
+#apt install virtualbox virtualbox-ext-pack virtualbox-guest-additions-iso -y
 
+apt autoremove --purge -y
+#rm /etc/apt/apt.conf.d/01proxy
