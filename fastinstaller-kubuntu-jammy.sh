@@ -109,5 +109,8 @@ apt remove libreoffice* --purge -y
 # optional Virtualbox LTS Version
 #apt install virtualbox virtualbox-ext-pack virtualbox-guest-additions-iso -y
 
+# Messenger Microsoft Teams, Telegram, Signal
+#snap install teams-for-linux signal-desktop telegram-desktop
+
 apt autoremove --purge -y
 #rm /etc/apt/apt.conf.d/01proxy
