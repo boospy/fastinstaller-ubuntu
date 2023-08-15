@@ -144,7 +144,7 @@ chmod +x fastinstaller-kubuntu-jammy.sh
 ~~~
 wget https://raw.githubusercontent.com/boospy/fastinstaller-ubuntu/master/fastinstaller-ubuntu-jammy.sh
 chmod +x fastinstaller-ubuntu-jammy.sh
-./fastinstaller-uubuntu-jammy.sh
+./fastinstaller-ubuntu-jammy.sh
 ~~~
 
   
