@@ -85,7 +85,7 @@ The script installs after the standard installation of Ubuntu/Kubuntu, selected 
   * bitwarden (password management)
   * onlyoffice-desktopeditors (replaces libreoffice)
 
-### The following packages will be installed
+### The following packages will be installed on Ubuntu
 [fastinstaller-ubuntu-jammy.sh](https://github.com/boospy/fastinstaller-ubuntu/blob/master/fastinstaller-ubuntu-jammy.sh)
   
 <img src="https://raw.githubusercontent.com/boospy/fastinstaller-ubuntu/master/ubuntu-installer.png" width="" height="100"> 
@@ -129,7 +129,7 @@ The script installs after the standard installation of Ubuntu/Kubuntu, selected 
 INSTALLATION
 ------------
 
-Run the following commands with SUDO or in a rootshell.
+Run the following commands with SUDO or in a rootshell. You can customize the file before you run it as described above.
 
 ### Kbuntu
 
