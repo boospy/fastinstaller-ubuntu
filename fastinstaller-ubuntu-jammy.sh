@@ -14,7 +14,20 @@
 gpg -k && gpg --no-default-keyring --keyring /usr/share/keyrings/iteas-keyring.gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 23CAE45582EB0928
 echo "deb [arch=amd64 signed-by=/usr/share/keyrings/iteas-keyring.gpg] http://apt.iteas.at/iteas jammy main" > /etc/apt/sources.list.d/iteas.list
 apt update
-apt dist-upgrade -y
+echo
+echo
+echo -------------------------------------------------------------------------
+echo "The next step is to bring your system up to date with a full-upgrade."
+echo "It may happen that packages you want to keep are deleted."
+echo "Please check the output before continuing!"
+echo -------------------------------------------------------------------------
+echo
+echo
+echo "Press ENTER to continue"
+read
+apt full-upgrade
+
+
 apt install ca-certificates-iteas-enterprise -y
 
 cd /tmp
