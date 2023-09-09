@@ -50,7 +50,7 @@ apt install brave-browser -y
 ubuntu-drivers autoinstall
 
 # Standard packages
-apt install master-pdf-editor-5 ubuntu-restricted-extras vlc soundconverter htop draw.io bitwarden cifs-utils nfs-common samba aspell-de hunspell-de-at filezilla speedtest-cli gnome-nettool lm-sensors smartmontools flowblade simplescreenrecorder strawberry rustdesk -y
+apt install master-pdf-editor-5 ubuntu-restricted-extras vlc soundconverter htop draw.io bitwarden cifs-utils nfs-common samba aspell-de hunspell-de-at filezilla speedtest-cli gnome-nettool lm-sensors smartmontools flowblade simplescreenrecorder strawberry rustdesk thunderbird-locale-de -y
 
 apt remove rhythmbox apport -y
 apt autoremove --purge -y
