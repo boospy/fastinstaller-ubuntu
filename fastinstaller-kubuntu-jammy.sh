@@ -49,7 +49,7 @@ apt install brave-browser -y
 ubuntu-drivers autoinstall
 
 # Standard packages
-apt install strawberry htop k3b k3b-extrathemes kdf dolphin-nextcloud nfs-common aspell-de hunspell-de-at mpv gnupg-agent kleopatra gnome-icon-theme showfoto kipi-plugins kde-config-cron dolphin-plugins filelight kcolorchooser soundkonverter kcalc partitionmanager kronometer kfind unp kubuntu-restricted-extras katomic avahi-discover simplescreenrecorder avahi-utils tellico language-pack-gnome-de finger konversation usb-creator-kde manpages-de master-pdf-editor-5 draw.io cifs-utils samba speedtest-cli lm-sensors nvme-cli smartmontools kdenetwork-filesharing kipi-plugins digikam plasma-workspace-wayland rustdesk bitwarden -y
+apt install strawberry htop k3b k3b-extrathemes kdf dolphin-nextcloud nfs-common aspell-de hunspell-de-at mpv gnupg-agent kleopatra gnome-icon-theme showfoto kipi-plugins kde-config-cron dolphin-plugins filelight kcolorchooser soundkonverter kcalc partitionmanager kronometer kfind unp kubuntu-restricted-extras katomic avahi-discover simplescreenrecorder avahi-utils tellico language-pack-gnome-de finger konversation usb-creator-kde manpages-de master-pdf-editor-5 draw.io cifs-utils samba speedtest-cli lm-sensors nvme-cli smartmontools kdenetwork-filesharing kipi-plugins digikam plasma-workspace-wayland rustdesk bitwarden thunderbird-locale-de -y
 
 
 apt remove rhythmbox apport timidity -y
