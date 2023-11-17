@@ -56,11 +56,20 @@ apt remove rhythmbox apport -y
 apt autoremove --purge -y
 
 
+
+
 # ------------------------------------------------------
 # Ab hier bitte Dinge einkommentieren die du benötigst:
 # From here please comment things you need:
 # ------------------------------------------------------
 
+# Wenn du einen Epson Drucker/Scanner betreibst, dann kannst du die Treiberpakete und Software von hier installieren
+# If you have an epson printer/scanner, then you can install drivers and software here
+#apt install epson-inkjet-printer-escpr epsonscan2 epsonscan2-non-free-plugin -y
+
+# Wenn du einen USB Drucker betreibst, kommentiere die nächste Zeile ein, das deaktiviert die automatische Installation von USB Druckern.
+# If you use an USB printer, then comment in the next line, this will be disable the install printer automatic.
+#apt purge ipp-usb && apt install libusb-0.1-4 -y
 
 # Office Alternative, kompatibel zum Microsoftformat
 # Office alternative, compatible with Microsoft format

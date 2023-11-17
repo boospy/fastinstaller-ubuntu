@@ -85,6 +85,13 @@ echo "emulate sh -c 'source /etc/profile'" >> /etc/zsh/zprofile
 # From here please comment things you need:
 # ------------------------------------------------------
 
+# Wenn du einen Epson Drucker/Scanner betreibst, dann kannst du die Treiberpakete und Software von hier installieren
+# If you have an epson printer/scanner, then you can install drivers and software here
+#apt install epson-inkjet-printer-escpr epsonscan2 epsonscan2-non-free-plugin -y
+
+# Wenn du einen USB Drucker betreibst, kommentiere die nächste Zeile ein, das deaktiviert die automatische Installation von USB Druckern.
+# If you use an USB printer, then comment in the next line, this will be disable the install printer automatic.
+#apt purge ipp-usb && apt install libusb-0.1-4 -y
 
 # optional Multimediapackages
 #apt-add-repository ppa:heyarje/makemkv-beta -n -y
