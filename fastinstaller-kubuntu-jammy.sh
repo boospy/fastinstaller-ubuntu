@@ -49,7 +49,7 @@ apt install brave-browser -y
 ubuntu-drivers autoinstall
 
 # Standard packages
-apt install strawberry htop k3b k3b-extrathemes kdf dolphin-nextcloud nfs-common aspell-de hunspell-de-at mpv gnupg-agent kleopatra gnome-icon-theme showfoto kipi-plugins kde-config-cron dolphin-plugins filelight kcolorchooser soundkonverter kcalc partitionmanager kronometer kfind unp kubuntu-restricted-extras katomic avahi-discover simplescreenrecorder avahi-utils tellico language-pack-gnome-de finger konversation usb-creator-kde manpages-de master-pdf-editor-5 draw.io cifs-utils samba speedtest-cli lm-sensors nvme-cli smartmontools kdenetwork-filesharing kipi-plugins digikam plasma-workspace-wayland rustdesk bitwarden thunderbird-locale-de gnome-disk-utility -y
+apt install strawberry htop k3b k3b-extrathemes kdf dolphin-nextcloud nfs-common aspell-de hunspell-de-at mpv gnupg-agent kleopatra gnome-icon-theme showfoto kipi-plugins kde-config-cron dolphin-plugins filelight kcolorchooser soundkonverter kcalc partitionmanager kronometer kfind unp kubuntu-restricted-extras katomic avahi-discover simplescreenrecorder avahi-utils tellico language-pack-gnome-de finger konversation usb-creator-kde manpages-de master-pdf-editor-5 draw.io cifs-utils samba speedtest-cli lm-sensors nvme-cli smartmontools kdenetwork-filesharing kipi-plugins digikam plasma-workspace-wayland rustdesk bitwarden thunderbird-locale-de gnome-disk-utility plasma-discover-backend-snap -y
 
 
 apt remove rhythmbox apport timidity -y
@@ -126,6 +126,11 @@ apt remove libreoffice* --purge -y
 
 # optional Virtualbox LTS Version
 #apt install virtualbox virtualbox-ext-pack virtualbox-guest-additions-iso -y
+
+# optional Virtualbox 7
+#wget -O- https://www.virtualbox.org/download/oracle_vbox_2016.asc | sudo gpg --yes --output /usr/share/keyrings/oracle-virtualbox-2016.gpg --dearmor
+#echo "deb [arch=amd64 signed-by=/usr/share/keyrings/oracle-virtualbox-2016.gpg] https://download.virtualbox.org/virtualbox/debian jammy contrib" > /etc/apt/sources.list.d/virtualbox.list
+#apt install virtualbox-7.0 -y
 
 # Messenger Microsoft Teams, Telegram, Signal
 #snap install teams-for-linux signal-desktop telegram-desktop
