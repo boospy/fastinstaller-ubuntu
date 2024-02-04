@@ -132,8 +132,18 @@ apt remove libreoffice* --purge -y
 #echo "deb [arch=amd64 signed-by=/usr/share/keyrings/oracle-virtualbox-2016.gpg] https://download.virtualbox.org/virtualbox/debian jammy contrib" > /etc/apt/sources.list.d/virtualbox.list
 #apt install virtualbox-7.0 -y
 
-# Messenger Microsoft Teams, Telegram, Signal
-#snap install teams-for-linux signal-desktop telegram-desktop
+# Messenger
+#snap install telegram-desktop zoom-client skype
+
+# Install Microsoft Teams via deb package
+#apt install teams-for-linux -y
+
+# Install Signal via deb package
+#wget -O- https://updates.signal.org/desktop/apt/keys.asc | gpg --dearmor > signal-desktop-keyring.gpg
+#cat signal-desktop-keyring.gpg | sudo tee /usr/share/keyrings/signal-desktop-keyring.gpg > /dev/null
+#echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] https://updates.signal.org/desktop/apt xenial main' | tee /etc/apt/sources.list.d/signal-xenial.list
+#apt update
+#apt install signal-desktop -y
 
 apt autoremove --purge -y
 #rm /etc/apt/apt.conf.d/01proxy
