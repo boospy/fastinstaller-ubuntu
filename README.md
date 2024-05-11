@@ -1,5 +1,5 @@
-Fastinstaller-Ubuntu-Kubuntu
-============================
+Fastinstaller-Ubuntu-Kubuntu (Jammy)
+====================================
 
 **You would like to show your appreciation for our help 8-o. Gladly. We thank you for your donation! ;)**
 
