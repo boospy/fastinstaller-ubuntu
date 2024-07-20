@@ -50,7 +50,7 @@ rm google-chrome-stable_current_amd64.deb
 ubuntu-drivers autoinstall
 
 # Standard packages
-apt install plasma-runners-addons strawberry htop k3b k3b-extrathemes kdf dolphin-nextcloud nfs-common aspell-de hunspell-de-at mpv kleopatra gnome-icon-theme showfoto kipi-plugins kde-config-cron filelight kcolorchooser soundkonverter kronometer kfind unp kubuntu-restricted-extras simplescreenrecorder avahi-utils tellico finger usb-creator-kde manpages-de master-pdf-editor-5 draw.io cifs-utils samba speedtest-cli lm-sensors nvme-cli kdenetwork-filesharing kipi-plugins digikam plasma-workspace-wayland bitwarden gnome-disk-utility rsibreak tinyotp -y
+apt install plasma-runners-addons strawberry htop k3b k3b-extrathemes kdf dolphin-nextcloud nfs-common aspell-de hunspell-de-at mpv kleopatra gnome-icon-theme showfoto kipi-plugins kde-config-cron filelight kcolorchooser soundkonverter kronometer kfind unp kubuntu-restricted-extras simplescreenrecorder avahi-utils tellico finger usb-creator-kde manpages-de master-pdf-editor-5 draw.io cifs-utils samba speedtest-cli lm-sensors nvme-cli kdenetwork-filesharing kipi-plugins digikam plasma-workspace-wayland bitwarden gnome-disk-utility rsibreak tinyotp qtqr -y
 
 
 apt remove apport timidity -y
