@@ -50,7 +50,7 @@ rm google-chrome-stable_current_amd64.deb
 ubuntu-drivers autoinstall
 
 # Standard packages
-apt install plasma-runners-addons strawberry htop k3b k3b-extrathemes kdf dolphin-nextcloud nfs-common aspell-de hunspell-de-at mpv kleopatra gnome-icon-theme showfoto kipi-plugins kde-config-cron filelight kcolorchooser soundkonverter kronometer kfind unp kubuntu-restricted-extras simplescreenrecorder avahi-utils tellico finger usb-creator-kde manpages-de master-pdf-editor-5 draw.io cifs-utils samba speedtest-cli lm-sensors nvme-cli kdenetwork-filesharing kipi-plugins digikam plasma-workspace-wayland bitwarden gnome-disk-utility rsibreak tinyotp qtqr -y
+apt install plasma-runners-addons strawberry htop k3b k3b-extrathemes kdf dolphin-nextcloud nfs-common aspell-de hunspell-de-at mpv kleopatra gnome-icon-theme showfoto kipi-plugins kde-config-cron filelight kcolorchooser soundkonverter kronometer kfind unp kubuntu-restricted-extras simplescreenrecorder avahi-utils tellico finger usb-creator-kde manpages-de master-pdf-editor-5 draw.io cifs-utils samba speedtest-cli lm-sensors nvme-cli kdenetwork-filesharing kipi-plugins digikam plasma-workspace-wayland bitwarden gnome-disk-utility rsibreak tinyotp qtqr language-pack-gnome-de -y
 
 
 apt remove apport timidity -y
@@ -136,9 +136,8 @@ apt -y --allow-downgrades install firefox-l10n-de
 # If you are using a USB printer and have problems with the automatic installation, comment in the next line, this will deactivate the automatic installation of USB printers.
 #apt purge ipp-usb && apt install libusb-0.1-4 -y
 
-# optional Multimediapackages (makemkv is not available this time for 24.04)
+# optional Multimediapackages
 #apt-add-repository ppa:heyarje/makemkv-beta -n -y
-#echo "deb http://ppa.launchpadcontent.net/heyarje/makemkv-beta/ubuntu/ jammy main" >  /etc/apt/sources.list.d/heyarje-ubuntu-makemkv-beta-jammy.list
 #apt update
 #apt install makemkv-bin -y
 #apt install openshot-qt mkvtoolnix-gui kdenlive -y
@@ -154,7 +153,7 @@ apt remove libreoffice* --purge -y
 
 # Libreoffice wenn Onlyoffice nicht gewünscht wird
 # Libreoffice if Onlyoffice is not desired
-#apt install libreoffice-templates -y
+#apt install libreoffice-templates libreoffice-help-de -y
 
 # Extra packages
 #apt install librecad synaptic tree git audacity -y
@@ -169,7 +168,7 @@ apt remove libreoffice* --purge -y
 
 # Kleine Spiele von KDE und Klassiker
 # Small games from KDE and classics
-apt install kdegames supertux supertuxkart solarwolf -y
+apt install kdegames supertux supertuxkart -y
 
 # optional Virtualbox LTS Version
 #apt install virtualbox virtualbox-ext-pack virtualbox-guest-additions-iso -y
@@ -187,8 +186,8 @@ apt install kdegames supertux supertuxkart solarwolf -y
 #apt update
 #apt install signal-desktop -y
 
-# UCS Univention Domänenanbindung (ist der Zeit noch nicht für 24.04 verfügbar), aber es funktionieren die Pakete für Jammy.
-# UCS Univention Domain Connection (is not available this time for 24.04), but the packages for jammy are working fine.
+# UCS Univention Domänenanbindung
+# UCS Univention Domain Connection
 #add-apt-repository ppa:univention-dev/ppa -n -y
 
 # Installation des UCS Clients für Kerberos/AD Anbindung an Univention Server
