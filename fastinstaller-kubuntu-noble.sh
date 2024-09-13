@@ -53,8 +53,6 @@ ubuntu-drivers autoinstall
 apt install plasma-runners-addons strawberry htop k3b k3b-extrathemes kdf dolphin-nextcloud nfs-common aspell-de hunspell-de-at mpv kleopatra gnome-icon-theme showfoto kipi-plugins kde-config-cron filelight kcolorchooser soundkonverter kronometer kfind unp kubuntu-restricted-extras simplescreenrecorder avahi-utils tellico finger usb-creator-kde manpages-de master-pdf-editor-5 draw.io cifs-utils samba speedtest-cli lm-sensors nvme-cli kdenetwork-filesharing kipi-plugins digikam plasma-workspace-wayland bitwarden gnome-disk-utility rsibreak tinyotp qtqr language-pack-gnome-de -y
 
 
-apt remove apport timidity -y
-
 # ZSH-Shell
 apt update
 apt install zsh git fortunes fortunes-de -y
@@ -198,5 +196,6 @@ apt install kdegames supertux supertuxkart -y
 # Developers and Administrators
 #apt install nload openfortigui openfortigui-runner virt-viewer pwgen konversation ldap-utils filezilla realvnc-vnc-viewer mactelnet-client preload krename kompare wireshark gtkterm xca libpam-mount davfs2 keyutils okteta manpages-de-dev php-mbstring composer dbeaver-ce rpi-imager zenmap -y
 
+apt remove apport timidity minidlna -y
 apt autoremove --purge -y
 #rm /etc/apt/apt.conf.d/01proxy
