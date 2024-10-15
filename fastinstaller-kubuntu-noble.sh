@@ -45,13 +45,11 @@ rm google-chrome-stable_current_amd64.deb
 #apt update
 #apt install brave-browser -y
 
-# Ab hier gehts los:
-
 ubuntu-drivers autoinstall
 
 # Standard packages
-apt install plasma-runners-addons strawberry htop k3b k3b-extrathemes kdf dolphin-nextcloud nfs-common aspell-de hunspell-de-at mpv kleopatra gnome-icon-theme showfoto kipi-plugins kde-config-cron filelight kcolorchooser soundkonverter kronometer kfind unp kubuntu-restricted-extras simplescreenrecorder avahi-utils tellico finger usb-creator-kde manpages-de master-pdf-editor-5 draw.io cifs-utils samba speedtest-cli lm-sensors nvme-cli kdenetwork-filesharing kipi-plugins digikam plasma-workspace-wayland bitwarden gnome-disk-utility rsibreak tinyotp qtqr language-pack-gnome-de -y
-
+echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | debconf-set-selections
+apt install plasma-runners-addons strawberry htop k3b k3b-extrathemes kdf dolphin-nextcloud nfs-common aspell-de hunspell-de-at mpv kleopatra gnome-icon-theme showfoto kipi-plugins kde-config-cron filelight kcolorchooser soundkonverter kronometer kfind unp kubuntu-restricted-extras simplescreenrecorder avahi-utils tellico finger usb-creator-kde manpages-de master-pdf-editor-5 draw.io cifs-utils samba speedtest-cli lm-sensors nvme-cli kdenetwork-filesharing digikam plasma-workspace-wayland bitwarden gnome-disk-utility rsibreak tinyotp qtqr language-pack-gnome-de -y
 
 # ZSH-Shell
 apt update
@@ -80,12 +78,19 @@ echo "emulate sh -c 'source /etc/profile'" >> /etc/zsh/zprofile
 
 echo "*.local" > /etc/mdns.allow
 echo ".local" >> /etc/mdns.allow
-echo "iteas.at" >> /etc/mdns.allow
+echo "v-source.org" >> /etc/mdns.allow
 echo "osit.cc" >> /etc/mdns.allow
 cp /usr/share/doc/avahi-daemon/examples/s* /etc/avahi/services/.
 systemctl restart avahi-daemon.service
 
 # Firefox Snap durch DEB Paket ersetzten
+# Firefox Snap replaced by DEB package
+echo "Solltest du Firefox noch geöffnet haben, schließen ihn jetzt."
+echo "If you still have Firefox open, close it now."
+echo
+echo "Press ENTER to continue"
+echo
+read
 if pgrep -x "firefox" > /dev/null
 then
     echo "Bitte Firefox zuerst beenden"
@@ -132,7 +137,7 @@ apt -y --allow-downgrades install firefox-l10n-de
 
 # Wenn du einen USB Drucker betreibst und Probleme mit der Automatik hast, kommentiere die nächste Zeile ein, das deaktiviert die automatische Installation von USB Druckern.
 # If you are using a USB printer and have problems with the automatic installation, comment in the next line, this will deactivate the automatic installation of USB printers.
-#apt purge ipp-usb && apt install libusb-0.1-4 -y
+#apt purge ipp-usb -y && apt install libusb-0.1-4 -y
 
 # optional Multimediapackages
 #apt-add-repository ppa:heyarje/makemkv-beta -n -y
@@ -149,8 +154,8 @@ apt -y --allow-downgrades install firefox-l10n-de
 apt install onlyoffice-desktopeditors -y
 apt remove libreoffice* --purge -y
 
-# Libreoffice wenn Onlyoffice nicht gewünscht wird
-# Libreoffice if Onlyoffice is not desired
+# Libreoffice, wenn Onlyoffice nicht gewünscht wird
+# Libreoffice, if Onlyoffice is not desired
 #apt install libreoffice-templates libreoffice-help-de -y
 
 # Extra packages
@@ -171,11 +176,17 @@ apt install kdegames supertux supertuxkart -y
 # optional Virtualbox LTS Version
 #apt install virtualbox virtualbox-ext-pack virtualbox-guest-additions-iso -y
 
+#snap set system store-certs.cert1="$(cat /usr/local/share/ca-certificates/fortinet-deepinspection-osit2.crt)"
+#snap get system store-certs
+
 # Messenger
-#snap install telegram-desktop zoom-client skype
+#snap install telegram-desktop zoom-client skype element-destkop
 
 # Install Microsoft Teams via deb package
 #apt install teams-for-linux -y
+
+# Install Signal via snap package
+#snap install signal-desktop
 
 # Install Signal via deb package
 #wget -O- https://updates.signal.org/desktop/apt/keys.asc | gpg --dearmor > signal-desktop-keyring.gpg
@@ -196,6 +207,6 @@ apt install kdegames supertux supertuxkart -y
 # Developers and Administrators
 #apt install nload openfortigui openfortigui-runner virt-viewer pwgen konversation ldap-utils filezilla realvnc-vnc-viewer mactelnet-client preload krename kompare wireshark gtkterm xca libpam-mount davfs2 keyutils okteta manpages-de-dev php-mbstring composer dbeaver-ce rpi-imager zenmap -y
 
-apt remove apport timidity minidlna -y
+apt remove apport timidity minidlna krdc konversation neochat -y
 apt autoremove --purge -y
 #rm /etc/apt/apt.conf.d/01proxy
