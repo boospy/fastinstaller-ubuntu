@@ -146,7 +146,7 @@ apt -y --allow-downgrades install firefox-l10n-de
 #apt install openshot-qt mkvtoolnix-gui kdenlive -y
 
 # Remote Service
-#apt install rustdesk -y
+apt install rustdesk -y
 #apt install nomachine -y
 
 # Office Alternative, kompatibel zum Microsoftformat

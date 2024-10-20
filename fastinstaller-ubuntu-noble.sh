@@ -26,8 +26,6 @@ echo
 echo "Press ENTER to continue"
 read
 apt full-upgrade
-
-
 apt install ca-certificates-iteas-enterprise -y
 
 cd /tmp
@@ -51,7 +49,8 @@ apt install brave-browser -y
 ubuntu-drivers autoinstall
 
 # Standard packages
-apt install master-pdf-editor-5 ubuntu-restricted-extras soundconverter htop draw.io bitwarden cifs-utils nfs-common samba aspell-de hunspell-de-at speedtest-cli gnome-nettool lm-sensors smartmontools flowblade simplescreenrecorder mpv unp avahi-utils finger nvme-cli tinyotp -y
+echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | debconf-set-selections
+apt install master-pdf-editor-5 ubuntu-restricted-extras soundconverter htop draw.io bitwarden cifs-utils nfs-common samba aspell-de hunspell-de-at speedtest-cli gnome-nettool lm-sensors smartmontools flowblade simplescreenrecorder mpv unp avahi-utils finger nvme-cli tinyotp rsibreak qtqr -y
 
 apt remove apport -y
 apt autoremove --purge -y
@@ -76,12 +75,19 @@ echo "emulate sh -c 'source /etc/profile'" >> /etc/zsh/zprofile
 
 echo "*.local" > /etc/mdns.allow
 echo ".local" >> /etc/mdns.allow
-echo "iteas.at" >> /etc/mdns.allow
+echo "v-source.org" >> /etc/mdns.allow
 echo "osit.cc" >> /etc/mdns.allow
 cp /usr/share/doc/avahi-daemon/examples/s* /etc/avahi/services/.
 systemctl restart avahi-daemon.service
 
 # Firefox Snap durch DEB Paket ersetzten
+# Firefox Snap replaced by DEB package
+echo "Solltest du Firefox noch geöffnet haben, schließen ihn jetzt."
+echo "If you still have Firefox open, close it now."
+echo
+echo "Press ENTER to continue"
+echo
+read
 if pgrep -x "firefox" > /dev/null
 then
     echo "Bitte Firefox zuerst beenden"
@@ -128,7 +134,7 @@ apt -y --allow-downgrades install firefox-l10n-de
 
 # Wenn du einen USB Drucker betreibst, kommentiere die nächste Zeile ein, das deaktiviert die automatische Installation von USB Druckern.
 # If you use an USB printer, then comment in the next line, this will be disable the install printer automatic.
-#apt purge ipp-usb && apt install libusb-0.1-4 -y
+#apt purge ipp-usb -y && apt install libusb-0.1-4 -y
 
 # Office Alternative, kompatibel zum Microsoftformat
 # Office alternative, compatible with Microsoft format
@@ -150,7 +156,7 @@ apt remove libreoffice* --purge -y
 # Manage collections including reportin
 #apt install tellico -y
 
-# optional Multimediapackages (makemkv is not available this time for 24.04)
+# optional Multimediapackages
 #apt-add-repository ppa:heyarje/makemkv-beta -n -y
 #echo "deb http://ppa.launchpadcontent.net/heyarje/makemkv-beta/ubuntu/ jammy main" >  /etc/apt/sources.list.d/heyarje-ubuntu-makemkv-beta-jammy.list
 #apt update
@@ -158,18 +164,27 @@ apt remove libreoffice* --purge -y
 #apt install openshot-qt mkvtoolnix-gui -y
 
 # Remote Service
-#apt install rustdesk -y
+apt install rustdesk -y
 #apt install nomachine -y
 
 # Kleine Gnome-Spiele und Klassiker
 # Small gnome-games and classics
-apt install gnome-games supertux supertuxkart solarwolf -y
+apt install gnome-games supertux supertuxkart -y
+
+# optional Virtualbox LTS Version
+#apt install virtualbox virtualbox-ext-pack virtualbox-guest-additions-iso -y
+
+#snap set system store-certs.cert1="$(cat /usr/local/share/ca-certificates/fortinet-deepinspection-osit2.crt)"
+#snap get system store-certs
 
 # Messenger
-#snap install telegram-desktop zoom-client skype
+#snap install telegram-desktop zoom-client skype element-destkop
 
 # Install Microsoft Teams via deb package
 #apt install teams-for-linux -y
+
+# Install Signal via snap package
+#snap install signal-desktop
 
 # Install Signal via deb package
 #wget -O- https://updates.signal.org/desktop/apt/keys.asc | gpg --dearmor > signal-desktop-keyring.gpg
@@ -188,7 +203,7 @@ apt install gnome-games supertux supertuxkart solarwolf -y
 
 # Entwickler und Administratoren
 # Developers and Administrators
-#apt install nload openfortigui virt-viewer pwgen ldap-utils filezilla realvnc-vnc-viewer mactelnet-client preload wireshark gtkterm xca libpam-mount davfs2 keyutils okteta manpages-de-dev php-mbstring composer dbeaver-ce rpi-imager zenmap -y
+#apt install nload openfortigui openfortigui-runner virt-viewer pwgen konversation ldap-utils filezilla realvnc-vnc-viewer mactelnet-client preload krename kompare wireshark gtkterm xca libpam-mount davfs2 keyutils okteta manpages-de-dev php-mbstring composer dbeaver-ce rpi-imager zenmap -y
 
 apt autoremove --purge -y
 #rm /etc/apt/apt.conf.d/01proxy

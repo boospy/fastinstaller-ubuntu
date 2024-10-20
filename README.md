@@ -14,7 +14,7 @@ The script installs after the standard installation of Ubuntu/Kubuntu, selected 
 # What does it exactly do at default with no changes of the script?
 
   * Add ITEAS enterprise repository https://apt.iteas.at
-  * Add brave-browser repository and install the brave-browser for more security
+  * Add brave-browser repository and install the brave-browser for more security  (except Kubuntu for searching bookmarks)
   * Install all ca-certifactes from iteas-enterprise
   * Update the whole System
   * Install thirdpartdrivers with ubuntu-drivers
@@ -36,6 +36,7 @@ The script installs after the standard installation of Ubuntu/Kubuntu, selected 
 <img src="https://raw.githubusercontent.com/boospy/fastinstaller-ubuntu/master/kubuntu-installer.png" width="" height="100">
 
   * strawberry (Music management)
+  * Microsoft Corefonts
   * htop
   * k3b
   * k3b-extrathemes
@@ -86,6 +87,9 @@ The script installs after the standard installation of Ubuntu/Kubuntu, selected 
   * rustdesk (remote adminstration)
   * bitwarden (password management)
   * onlyoffice-desktopeditors (replaces libreoffice)
+  * tinyotp
+  * rsibreak
+  * qtqr
 
 ### The following packages will be installed on Ubuntu
 [fastinstaller-ubuntu-noble.sh](https://github.com/boospy/fastinstaller-ubuntu/blob/master/fastinstaller-ubuntu-noble.sh)
@@ -93,6 +97,7 @@ The script installs after the standard installation of Ubuntu/Kubuntu, selected 
 <img src="https://raw.githubusercontent.com/boospy/fastinstaller-ubuntu/master/ubuntu-installer.png" width="" height="100"> 
   
   * master-pdf-editor-5  (edit your pdf documents)
+  * Microsoft Corefonts
   * ubuntu-restricted-extras
   * vlc
   * soundconverter
@@ -108,11 +113,15 @@ The script installs after the standard installation of Ubuntu/Kubuntu, selected 
   * speedtest-cli
   * gnome-nettool
   * lm-sensors
+  * nvme-cli
   * smartmontools
   * flowblade
-  * simplescreenrecorder  (record everything on your screen)
+  * simplescreenrecorder (record everything on your screen)
   * strawberry (Music management)
   * rustdesk (remote adminstration)
+  * tinyotp
+  * rsibreak
+  * qtqr
   
 # And you can choose from the following options in the script
 
@@ -123,9 +132,10 @@ The script installs after the standard installation of Ubuntu/Kubuntu, selected 
   * complete communication suite Kontact, incl. all plugins and extensions (only Kubuntu)
   * Small games from KDE (only Kubuntu)
   * Add MakeMKV repository (multimedia save your DVD and Blurays) with openshot-qt,  mkvtoolnix-gui and kdenlive
-  * optional Virtualbox LTS Version (only Kubuntu)
-  * Messenger Microsoft Teams, Telegram, Signal
+  * optional Virtualbox LTS Version
+  * Messenger Microsoft Teams, Telegram, Signal, Skype, Element (Matrix)
   * Professional photo editing with Gimp and Darktable
+  * UCS Univention Domain Connection
 
 
 INSTALLATION
