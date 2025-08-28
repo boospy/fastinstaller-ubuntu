@@ -142,7 +142,7 @@ apt -y --allow-downgrades install firefox-l10n-de
 # optional Multimediapackages
 #apt-add-repository ppa:heyarje/makemkv-beta -n -y
 #apt update
-#apt install makemkv-bin -y
+#apt install makemkv-bin default-jre -y
 #apt install openshot-qt mkvtoolnix-gui kdenlive -y
 
 # Remote Service
@@ -180,10 +180,13 @@ apt install kdegames supertux supertuxkart -y
 #snap get system store-certs
 
 # Messenger
-#snap install telegram-desktop zoom-client skype element-destkop
+#snap install telegram-desktop zoom-client element-desktop
 
 # Install Microsoft Teams via deb package
-#apt install teams-for-linux -y
+#wget -qO /etc/apt/keyrings/teams-for-linux.asc https://repo.teamsforlinux.de/teams-for-linux.asc
+#sh -c 'echo "Types: deb\nURIs: https://repo.teamsforlinux.de/debian/\nSuites: stable\nComponents: main\nSigned-By: /etc/apt/keyrings/teams-for-linux.asc\nArchitectures: amd64" | tee /etc/apt/sources.list.d/teams-for-linux-packages.sources'
+#apt update && apt install teams-for-linux
+
 
 # Install Signal via snap package
 #snap install signal-desktop
