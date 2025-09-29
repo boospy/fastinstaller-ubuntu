@@ -34,16 +34,16 @@ cd /tmp
 # Google Chrome or Brave, choose:
 
 # Google Chrome:
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-apt install ./google-chrome-stable_current_amd64.deb
-rm google-chrome-stable_current_amd64.deb
+#wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+#apt install ./google-chrome-stable_current_amd64.deb
+#rm google-chrome-stable_current_amd64.deb
 
 # Brave Secure Browser
-#apt install curl -y
-#curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
-#echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main"| tee /etc/apt/sources.list.d/brave-browser-release.list
-#apt update
-#apt install brave-browser -y
+apt install curl -y
+curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
+echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main"| tee /etc/apt/sources.list.d/brave-browser-release.list
+apt update
+apt install brave-browser -y
 
 ubuntu-drivers autoinstall
 
@@ -167,7 +167,8 @@ apt remove libreoffice* --purge -y
 
 # optional - komplette Kommunikationssuite Kontact, inkl. alle Plugins und Erweiterungen
 # optional - complete communication suite Kontact, incl. all plugins and extensions
-#apt install kdepim -y
+snap remove thunderbird
+apt install kdepim -y
 
 # Kleine Spiele von KDE und Klassiker
 # Small games from KDE and classics
